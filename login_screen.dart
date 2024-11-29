@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'forget_password_screen.dart'; // Import ForgetPasswordScreen
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -113,6 +114,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: Text(
                         'Don\'t have an account? Sign up',
+                        style: TextStyle(color: Colors.blueAccent),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    // "Forgot Password?" link
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ForgetPasswordScreen()),
+                        );
+                      },
+                      child: Text(
+                        'Forgot Password?',
                         style: TextStyle(color: Colors.blueAccent),
                       ),
                     ),
